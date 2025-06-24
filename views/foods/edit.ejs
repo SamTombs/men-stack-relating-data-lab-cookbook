@@ -1,2 +1,17 @@
-// edit page to edit information on a product in Pantry
-// AAU, I need the ability to edit and delete items in my pantry, allowing me full control over managing my stored items.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Food</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit : <%= food.name %></h1>
+    <form action="/users/<%= user._id %>/foods/<%= food._id %>?_method=PUT" method="POST">
+    <label for="name">Food Name:</label>
+    <input type="text" name="name" id="name" required value="<%= food.name %>" />
+    <button type="submit">Update Food</button>
+    </form>
+  </body>
+</html>
